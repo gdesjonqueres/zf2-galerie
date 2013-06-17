@@ -1,6 +1,6 @@
-alias /blankapp /var/git/zf2/blank-app/public
+alias /galerie /var/git/zf2/galerie/public
 
-<Directory /var/git/zf2/blank-app/public>
+<Directory /var/git/zf2/galerie/public>
 	Order deny,allow
 	Allow from all
 
@@ -10,7 +10,7 @@ alias /blankapp /var/git/zf2/blank-app/public
 	RewriteCond %{RESQUEST_FILENAME} -s [OR]
 	RewriteCond %{RESQUEST_FILENAME} -l [OR]
 	RewriteCond %{RESQUEST_FILENAME} -d
-	RewriteBase /blankapp
+	RewriteBase /galerie
 	RewriteRule ^.*$ - [NC,L]
 	RewriteRule !\.(js|ico|txt|gif|jpg|png|css)$ index.php [NC,L]
 </Directory>

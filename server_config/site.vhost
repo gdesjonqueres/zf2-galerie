@@ -1,10 +1,10 @@
 <VirtualHost *:80>
-	ServerName blankapp.local
-	DocumentRoot /var/git/zf2/blank-app/public
+	ServerName galerie.local
+	DocumentRoot /var/git/zf2/galerie/public
 
 	SetEnv APPLICATION_ENV "development"
  
-	<Directory "/var/git/zf2/blank-app/public">
+	<Directory "/var/git/zf2/galerie/public">
 		Order deny,allow
 		Allow from all
 

@@ -1,12 +1,12 @@
 {
-    "name": "zf2/blank-app",
-    "description": "Skeleton Application for ZF2",
+    "name": "zf2/galerie",
+    "description": "Galerie construite a partir de app-blank pour ZF2",
     "license": "BSD-3-Clause",
     "keywords": [
         "framework",
         "zf2"
     ],
-    "homepage": "http://framework.zend.com/",
+    "homepage": "http://gdesjonqueres.fr/",
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": ">2.2.0rc1",
