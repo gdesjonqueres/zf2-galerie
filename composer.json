@@ -1,5 +1,5 @@
 {
-    "name": "zendframework/skeleton-application",
+    "name": "zf2/blank-app",
     "description": "Skeleton Application for ZF2",
     "license": "BSD-3-Clause",
     "keywords": [
@@ -9,6 +9,7 @@
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": ">2.2.0rc1"
+        "zendframework/zendframework": ">2.2.0rc1",
+        "doctrine/orm": "2.3.4"
     }
 }
