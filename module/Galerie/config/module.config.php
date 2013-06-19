@@ -32,31 +32,33 @@ return array(
                 ),
                 'verb' => 'get',
                 'may_terminate' => true,
-            ),
 
-            'add' => array(
-                'type' => 'Literal',
-                'options' => array(
-                    'route' => '/ajouter',
-                    'defaults' => array(
-                        'action' => 'edit',
+                'child_routes' => array(
+                    'add' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/ajouter',
+                            'defaults' => array(
+                                'action' => 'edit',
+                            ),
+                        ),
+                        'verb' => 'get,post',
+                    ),
+
+                    'edit' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => '/editer/:id',
+                            'constraints' => array(
+                                'id' => '[1-9][0-9]*'
+                            ),
+                            'defaults' => array(
+                                'action' => 'edit',
+                            ),
+                        ),
+                        'verb' => 'get,post',
                     ),
                 ),
-                'verb' => 'get,post',
-            ),
-
-            'edit' => array(
-                'type' => 'Segment',
-                'options' => array(
-                    'route' => '/editer/:id',
-                    'constraints' => array(
-                        'id' => '[1-9][0-9]*'
-                    ),
-                    'defaults' => array(
-                        'action' => 'edit',
-                    ),
-                ),
-                'verb' => 'get,post',
             ),
         ),
     ),
