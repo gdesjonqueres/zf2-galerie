@@ -22,4 +22,9 @@ class Module implements
             ),
         );
     }
+
+    public function getConfig()
+    {
+        return __DIR__ . '/config/module.config.php';
+    }
 }
