@@ -5,6 +5,7 @@ return array(
             'Galerie\Controller\Index' => 'Galerie\Controller\IndexController',
         ),
     ),
+
     'view_manager' => array(
         'template_map' => array(
             'galerie/index/index' => __DIR__ . '/../view/galerie/index/index.phtml',
@@ -14,6 +15,24 @@ return array(
         ),
         'template_path_stack' => array(
             'galerie' => __DIR__ . '/../view',
+        ),
+    ),
+
+    'router' => array(
+        'routes' => array(
+            'galerie' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route' => '/galeries',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Galerie\Controller',
+                        'controller' => 'Index',
+                        'action' => 'index',
+                    ),
+                ),
+                'verb' => 'get',
+                'may_terminate' => true,
+            ),
         ),
     ),
 );
