@@ -5,6 +5,7 @@ use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
+use Zend\ModuleManager\Feature\ViewHelperProviderInterface;
 
 use Zend\EventManager\EventInterface;
 
@@ -12,7 +13,8 @@ class Module implements
     AutoloaderProviderInterface,
     ConfigProviderInterface,
     BootstrapListenerInterface,
-    ServiceProviderInterface
+    ServiceProviderInterface,
+    ViewHelperProviderInterface
 {
     public function getAutoloaderConfig()
     {
@@ -31,7 +33,7 @@ class Module implements
 
     public function getConfig()
     {
-          return include __DIR__ . '/config/module.config.php';
+        return include __DIR__ . '/config/module.config.php';
     }
 
     public function onBootstrap(EventInterface $e)
@@ -43,6 +45,18 @@ class Module implements
     {
         return array(
             'factories' => array(
+                'Galerie\Model\GalerieTable' => function($sm) {
+                    return new GalerieTable($sm->get('Zend\Db\Adapter\Adapter'));
+                }
+            ),
+        );
+    }
+
+    public function getViewHelperConfig()
+    {
+        return array(
+            'factories' => array(
+                //'test' => new MyViewHelper()
             ),
         );
     }
